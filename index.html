@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Balita Underweight (BB/U)</title>
+    <!-- Tailwind CSS untuk Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #f0fdfa; }
+        .modal-enter { animation: fadeIn 0.3s ease-out forwards; }
+        .modal-leave { animation: fadeOut 0.3s ease-out forwards; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0; transform: scale(0.95); }
+        }
+        
+        /* Styling khusus untuk buku menu makanan */
+        .menu-book-bg {
+            background-color: #fffbeb;
+            background-image: repeating-linear-gradient(transparent, transparent 31px, #fcd34d 31px, #fcd34d 32px);
+            line-height: 32px;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-teal-600 text-white text-center py-12 px-4 shadow-md rounded-b-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4"><i class="fas fa-baby"></i> Panduan Sehat Balita</h1>
+        <p class="text-xl max-w-2xl mx-auto font-light">
+            Memahami dan Mengatasi Underweight (Berat Badan Kurang) Berdasarkan Indikator BB/U
+        </p>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-teal-800 mb-2">Buku Menu Materi <i class="fas fa-book-open"></i></h2>
+            <p class="text-gray-600">Pilih dan klik bab di bawah ini untuk membaca materinya.</p>
+        </div>
+
+        <!-- Grid Menu Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Bab 1 -->
+            <div onclick="openModal('modalBab1')" class="bg-white rounded-2xl shadow-lg p-6 border-t-8 border-rose-400 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+                <div class="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 text-rose-500 text-2xl">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Bab 1: Apa itu BB/U?</h3>
+                <p class="text-gray-600 text-sm">Definisi Underweight menurut grafik pertumbuhan WHO.</p>
+                <div class="mt-4 text-rose-500 font-bold text-sm">Baca Materi &rarr;</div>
+            </div>
+
+            <!-- Bab 2 -->
+            <div onclick="openModal('modalBab2')" class="bg-white rounded-2xl shadow-lg p-6 border-t-8 border-amber-400 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+                <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 text-amber-500 text-2xl">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Bab 2: Penyebab Umum</h3>
+                <p class="text-gray-600 text-sm">Mengapa berat badan balita bisa sulit naik?</p>
+                <div class="mt-4 text-amber-500 font-bold text-sm">Baca Materi &rarr;</div>
+            </div>
+
+            <!-- Bab 3 -->
+            <div onclick="openModal('modalBab3')" class="bg-white rounded-2xl shadow-lg p-6 border-t-8 border-blue-400 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 text-blue-500 text-2xl">
+                    <i class="fas fa-shield-virus"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Bab 3: Dampak Jangka Panjang</h3>
+                <p class="text-gray-600 text-sm">Apa yang terjadi jika underweight dibiarkan?</p>
+                <div class="mt-4 text-blue-500 font-bold text-sm">Baca Materi &rarr;</div>
+            </div>
+
+            <!-- Bab 4 -->
+            <div onclick="openModal('modalBab4')" class="bg-white rounded-2xl shadow-lg p-6 border-t-8 border-green-400 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 text-green-500 text-2xl">
+                    <i class="fas fa-apple-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Bab 4: Solusi & Kejar BB</h3>
+                <p class="text-gray-600 text-sm">Strategi pemberian makan dan penanganan medis.</p>
+                <div class="mt-4 text-green-500 font-bold text-sm">Baca Materi &rarr;</div>
+            </div>
+
+            <!-- Buku Menu Resep -->
+            <div onclick="openModal('modalResep')" class="md:col-span-2 lg:col-span-2 bg-gradient-to-r from-orange-400 to-red-400 rounded-2xl shadow-lg p-6 text-white cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl transition duration-300 flex items-center">
+                <div class="mr-6">
+                    <i class="fas fa-utensils text-5xl opacity-80"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-1">Buku Menu Balita Kejar BB</h3>
+                    <p class="text-orange-100">Kumpulan ide menu makanan padat kalori (Double Protein & Ekstra Lemak) untuk mengatasi Underweight.</p>
+                    <div class="mt-3 bg-white text-orange-500 inline-block px-4 py-1 rounded-full font-bold text-sm shadow">Buka Menu Resep &rarr;</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= MODALS SECTION ================= -->
+
+    <!-- Modal Bab 1 -->
+    <div id="modalBab1" class="fixed inset-0 bg-gray-900 bg-opacity-60 hidden flex items-center justify-center p-4 z-50 overflow-y-auto">
+        <div class="bg-white rounded-2xl w-full max-w-2xl my-8 overflow-hidden relative shadow-2xl modal-enter">
+            <button onclick="closeModal('modalBab1')" class="absolute top-4 right-4 text-gray-400 hover:text-rose-500 text-2xl font-bold">&times;</button>
+            <div class="bg-rose-500 p-6 text-white">
+                <h2 class="text-2xl font-bold"><i class="fas fa-chart-line mr-2"></i> Bab 1: Memahami Indikator BB/U</h2>
+            </div>
+            <div class="p-8 prose prose-rose max-w-none">
+                <p><strong>BB/U (Berat Badan menurut Umur)</strong> adalah indikator yang digunakan untuk mengetahui apakah seorang anak memiliki berat badan yang sesuai dengan usianya.</p>
+                <ul class="list-disc pl-5 space-y-2 mt-4 text-gray-700">
+                    <li>Indikator ini diukur menggunakan grafik standar pertumbuhan dari <strong>WHO</strong>.</li>
+                    <li><strong>Underweight (Berat Badan Kurang):</strong> Jika posisi anak berada di grafik antara garis <strong>-2 SD sampai -3 SD</strong> (Z-score).</li>
+                    <li><strong>Severely Underweight (Sangat Kurang):</strong> Jika posisi anak berada di bawah garis <strong>-3 SD</strong>.</li>
+                    <li><strong>Normal:</strong> Antara -2 SD hingga +1 SD.</li>
+                </ul>
+                <div class="bg-rose-50 p-4 border-l-4 border-rose-500 mt-6 rounded text-sm text-gray-800">
+                    <strong>Catatan Penting:</strong> BB/U yang rendah mengindikasikan masalah gizi saat ini (akut) atau masa lalu (kronis). Namun, indikator ini harus digabungkan dengan PB/U (Panjang Badan) untuk memastikan apakah anak juga mengalami stunting.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bab 2 -->
+    <div id="modalBab2" class="fixed inset-0 bg-gray-900 bg-opacity-60 hidden flex items-center justify-center p-4 z-50 overflow-y-auto">
+        <div class="bg-white rounded-2xl w-full max-w-2xl my-8 overflow-hidden relative shadow-2xl modal-enter">
+            <button onclick="closeModal('modalBab2')" class="absolute top-4 right-4 text-gray-400 hover:text-amber-500 text-2xl font-bold">&times;</button>
+            <div class="bg-amber-500 p-6 text-white">
+                <h2 class="text-2xl font-bold"><i class="fas fa-search mr-2"></i> Bab 2: Penyebab Umum Underweight</h2>
+            </div>
+            <div class="p-8">
+                <p class="mb-4 text-gray-700">Mengapa berat badan balita bisa sulit naik? Penyebabnya seringkali merupakan kombinasi dari beberapa faktor berikut:</p>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <h4 class="font-bold text-amber-600 mb-1">1. Asupan Kalori Tidak Adekuat</h4>
+                        <p class="text-sm text-gray-600">Porsi makan terlalu sedikit, makanan terlalu cair (kurang padat kalori), atau anak mengalami GTM (Gerakan Tutup Mulut).</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <h4 class="font-bold text-amber-600 mb-1">2. Infeksi dan Penyakit Penyerta</h4>
+                        <p class="text-sm text-gray-600">Sering batuk pilek, diare berulang, infeksi saluran kemih (ISK), tuberkulosis (TBC), atau anemia (kurang zat besi).</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <h4 class="font-bold text-amber-600 mb-1">3. Pola Asuh & Feeding Rules</h4>
+                        <p class="text-sm text-gray-600">Jadwal makan yang tidak teratur, makan sambil jalan-jalan atau menonton gadget sehingga anak tidak fokus pada rasa kenyang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bab 3 -->
+    <div id="modalBab3" class="fixed inset-0 bg-gray-900 bg-opacity-60 hidden flex items-center justify-center p-4 z-50 overflow-y-auto">
+        <div class="bg-white rounded-2xl w-full max-w-2xl my-8 overflow-hidden relative shadow-2xl modal-enter">
+            <button onclick="closeModal('modalBab3')" class="absolute top-4 right-4 text-gray-400 hover:text-blue-500 text-2xl font-bold">&times;</button>
+            <div class="bg-blue-500 p-6 text-white">
+                <h2 class="text-2xl font-bold"><i class="fas fa-shield-virus mr-2"></i> Bab 3: Dampak Jika Dibiarkan</h2>
+            </div>
+            <div class="p-8">
+                <div class="flex items-start space-x-4 mb-6">
+                    <div class="text-blue-500 text-3xl"><i class="fas fa-brain"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-800">Gangguan Perkembangan Kognitif</h4>
+                        <p class="text-gray-600 text-sm">1000 Hari Pertama Kehidupan adalah masa emas perkembangan otak. Kurangnya nutrisi dapat menurunkan tingkat kecerdasan (IQ) anak secara permanen.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 mb-6">
+                    <div class="text-blue-500 text-3xl"><i class="fas fa-ruler-vertical"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-800">Risiko Stunting</h4>
+                        <p class="text-gray-600 text-sm">Underweight yang berlangsung lama (kronis) akan membuat tubuh menghentikan pertumbuhan tulang untuk menyelamatkan organ vital, sehingga anak menjadi pendek (stunting).</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-blue-500 text-3xl"><i class="fas fa-hospital-user"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-800">Sistem Imun Lemah</h4>
+                        <p class="text-gray-600 text-sm">Balita menjadi lebih rentan terhadap infeksi. Ketika sakit, berat badan akan semakin turun, menciptakan lingkaran setan yang sulit diputus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bab 4 -->
+    <div id="modalBab4" class="fixed inset-0 bg-gray-900 bg-opacity-60 hidden flex items-center justify-center p-4 z-50 overflow-y-auto">
+        <div class="bg-white rounded-2xl w-full max-w-2xl my-8 overflow-hidden relative shadow-2xl modal-enter">
+            <button onclick="closeModal('modalBab4')" class="absolute top-4 right-4 text-gray-400 hover:text-green-500 text-2xl font-bold">&times;</button>
+            <div class="bg-green-500 p-6 text-white">
+                <h2 class="text-2xl font-bold"><i class="fas fa-apple-alt mr-2"></i> Bab 4: Solusi & Strategi Kejar BB</h2>
+            </div>
+            <div class="p-8">
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i> 
+                        <span><strong>Terapkan Feeding Rules:</strong> Jadwal teratur (3x makan utama, 2x selingan). Durasi maksimal 30 menit. Tidak ada gangguan (TV/Gadget).</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i> 
+                        <span><strong>Tingkatkan Kepadatan Kalori:</strong> Tambahkan sumber lemak tambahan (minyak zaitun, mentega, santan, alpukat) pada setiap mangkuk makanan.</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i> 
+                        <span><strong>Menu Double Protein:</strong> Gunakan protein hewani ganda dalam satu porsi. (Contoh: Telur + Daging sapi, atau Ayam + Hati Ayam).</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i> 
+                        <span><strong>Screening Medis:</strong> Bawa ke Dokter Spesialis Anak (DSA) jika BB tidak naik selama 2 bulan berturut-turut untuk cek ISK, TB, atau Anemia.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Buku Menu Resep -->
+    <div id="modalResep" class="fixed inset-0 bg-gray-900 bg-opacity-80 hidden flex items-center justify-center p-4 z-50 overflow-y-auto">
+        <div class="bg-white rounded-md w-full max-w-4xl my-8 overflow-hidden relative shadow-2xl modal-enter flex flex-col md:flex-row">
+            
+            <button onclick="closeModal('modalResep')" class="absolute top-4 right-4 z-10 text-gray-500 hover:text-red-600 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow font-bold">&times;</button>
+            
+            <!-- Left Side (Cover Book Look) -->
+            <div class="w-full md:w-1/3 bg-orange-500 text-white p-8 flex flex-col justify-center border-r-8 border-orange-700">
+                <i class="fas fa-book-open text-6xl mb-4 opacity-80 text-center"></i>
+                <h2 class="text-3xl font-bold text-center mb-2">Buku Menu Balita</h2>
+                <p class="text-center text-orange-100 text-sm">Resep Padat Kalori (BB Booster) Spesial Underweight</p>
+            </div>
+            
+            <!-- Right Side (Recipe Content) -->
+            <div class="w-full md:w-2/3 menu-book-bg p-8 max-h-[80vh] overflow-y-auto font-medium text-gray-800">
+                <h3 class="text-2xl font-extrabold text-orange-700 mb-6 border-b-2 border-orange-300 pb-2">Daftar Menu Harian:</h3>
+                
+                <!-- Recipe 1 -->
+                <div class="mb-8 bg-white p-4 rounded shadow border border-orange-100">
+                    <h4 class="text-lg font-bold text-gray-800 flex items-center"><i class="fas fa-utensils text-orange-400 mr-2"></i> Nasi Tim Ayam Kuah Santan (Double Protein)</h4>
+                    <p class="text-sm text-gray-600 mb-2 mt-1">Sangat padat kalori berkat santan dan dua jenis protein.</p>
+                    <ul class="text-sm list-disc pl-5 mb-2 text-gray-700">
+                        <li><strong>Bahan:</strong> Nasi lembek, Daging ayam cincang, Telur puyuh (3 butir), Wortel parut, 30ml santan kental, 1 sdt margarin/unsalted butter.</li>
+                        <li><strong>Cara:</strong> Tumis ayam dengan margarin, masukkan air dan santan. Rebus hingga matang, masukkan telur puyuh dan wortel. Siram di atas nasi lembek.</li>
+                    </ul>
+                </div>
+
+                <!-- Recipe 2 -->
+                <div class="mb-8 bg-white p-4 rounded shadow border border-orange-100">
+                    <h4 class="text-lg font-bold text-gray-800 flex items-center"><i class="fas fa-hamburger text-orange-400 mr-2"></i> Perkedel Kentang Daging Sapi Lumer</h4>
+                    <p class="text-sm text-gray-600 mb-2 mt-1">Cocok sebagai makanan utama atau selingan bagi anak yang GTM nasi.</p>
+                    <ul class="text-sm list-disc pl-5 mb-2 text-gray-700">
+                        <li><strong>Bahan:</strong> Kentang kukus lumat, Daging sapi giling (tumis matang), Keju cheddar parut, 1 butir telur, Minyak padat untuk menggoreng.</li>
+                        <li><strong>Cara:</strong> Campur kentang, daging sapi, dan keju. Bentuk bulat pipih, celupkan ke telur yang sudah dikocok, lalu goreng hingga kecoklatan.</li>
+                    </ul>
+                </div>
+
+                <!-- Recipe 3 (Snack) -->
+                <div class="mb-4 bg-white p-4 rounded shadow border border-orange-100">
+                    <h4 class="text-lg font-bold text-gray-800 flex items-center"><i class="fas fa-ice-cream text-orange-400 mr-2"></i> Selingan: Puding Roti Alpukat Mentega</h4>
+                    <p class="text-sm text-gray-600 mb-2 mt-1">Selingan (snack) tinggi kalori dan lemak sehat.</p>
+                    <ul class="text-sm list-disc pl-5 mb-2 text-gray-700">
+                        <li><strong>Bahan:</strong> 2 lembar roti tawar gandum/putih, 1/2 buah alpukat mentega, Susu UHT Full Cream (100ml), 1 sdm keju parut.</li>
+                        <li><strong>Cara:</strong> Blender alpukat dengan susu. Sobek roti tawar ke dalam mangkuk tahan panas, siram dengan campuran alpukat dan susu, taburi keju. Kukus 15 menit.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+        <p class="text-sm text-gray-400">© 2026 Panduan Gizi Balita - Konsultasikan kondisi spesifik anak dengan Dokter Spesialis Anak.</p>
+    </footer>
+
+    <!-- JavaScript Control for Modals -->
+    <script>
+        // Fungsi untuk membuka modal berdasarkan ID
+        function openModal(modalID) {
+            const modal = document.getElementById(modalID);
+            modal.classList.remove('hidden');
+            // Mencegah body di-scroll saat modal terbuka
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal(modalID) {
+            const modal = document.getElementById(modalID);
+            modal.classList.add('hidden');
+            // Mengembalikan scroll pada body
+            document.body.style.overflow = 'auto';
+        }
+
+        // Menutup modal jika user mengklik area abu-abu (backdrop)
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.fixed.inset-0');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
